@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+header {
+    background: #662225;
+    height: 100px;
+}
+
+footer {
+    background: #7D5E3C;
+    height: 100px;
+}
