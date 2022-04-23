@@ -70,12 +70,12 @@ function Calendar(id, year, month) {
         document.querySelector('#'+id+' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
     }
 }
-Calendar("calendar_table", new Date().getFullYear(), new Date().getMonth());
+Calendar("calendarTable", new Date().getFullYear(), new Date().getMonth());
 // переключатель минус месяц
-document.querySelector('#calendar_table thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
-    Calendar("calendar_table", document.querySelector('#calendar_table thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar_table thead td:nth-child(2)').dataset.month)-1);
+document.querySelector('#calendarTable thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
+    Calendar("calendarTable", document.querySelector('#calendarTable thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendarTable thead td:nth-child(2)').dataset.month)-1);
 }
 // переключатель плюс месяц
-document.querySelector('#calendar_table thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
-    Calendar("calendar_table", document.querySelector('#calendar_table thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar_table thead td:nth-child(2)').dataset.month)+1);
+document.querySelector('#calendarTable thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
+    Calendar("calendarTable", document.querySelector('#calendarTable thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendarTable thead td:nth-child(2)').dataset.month)+1);
 }
