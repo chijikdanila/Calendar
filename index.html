@@ -11,7 +11,7 @@
         <header class="headerBody">
             <input class="inputChangePages" type="button" value="Switch">
             <div class="divNameOfSection">
-                <label class="nameOfSection"></label>
+                <label class="nameOfSection">Calendar</label>
             </div>
             <label class="userProfile"></label>
         </header>
@@ -19,8 +19,12 @@
             <div class="wrapper">
                 <!--Calendar-->
                 <div id="calendar" class="block">
-                    <p class="showCurrentTime"></p>
-                    <table id="calendar_table">
+                    <div class="dateAndEvents">
+                        <label class="showCurrentTime"></label>
+                        <button class="eventsManagment">Events management</button>
+                    </div>
+                    <label class="eventsList">Events</label>
+                    <table id="calendarTable">
                         <thead>
                         <tr><td>‹<td colspan="5"><td>›
                         <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
@@ -35,14 +39,22 @@
                     <!--Empty-->
                 </div>
                 <!--Add new event/Change existing event-->
-                <div id="events_changer" class="none">
+                <div id="eventsChanger" class="none">
                     <!--Empty-->
                 </div>
             </div>
         </main>
         <footer class="footerBody">
-
+            <a href="https://github.com/chijikdanila" target="_blank">
+                <div class="githubIcon"></div>
+            </a>
+            <div class="divNameOfSection">
+                <label class="yearCreation">2022</label>
+            </div> 
+            <a href="https://www.bsuir.by" target="_blank">
+                <img class="bsuirIcon" src="./source/bsuir.jpg">
+            </a>
         </footer>
-        <script src="js/index.js"></script>
+        <script type="module" src="js/index.js"></script>
     </body>
 </html>

@@ -20,6 +20,7 @@
 }
 
 .footerBody {
+    text-align: center;
     width: 100%;
     height: 100px;
     background-color: #662225;
@@ -43,8 +44,28 @@
     color: white;
     font-size: 20px;
 }
+
 .showCurrentTime {
-    margin: 0px;
+    margin-top: 5%;
+    border-radius: 15px;
+    font-size: 25px;
+    background: #EAD39C;
+    padding: 1% 1% 1% 1%;
+}
+
+.eventsManagment {
+    margin-top: 5%;
+    border-radius: 15px;
+    font-size: 25px;
+    background: #EAD39C;
+    transition: 1.1s;
+    padding: 1% 1% 1% 1%;
+}
+
+.eventsManagment:hover {
+    cursor: pointer;
+    color: #B51D0A;
+    background: #401214;
 }
 
 .inputChangePages {
@@ -54,46 +75,110 @@
     top: 30px;
     bottom: 0px;
     height: 40px;
+    width: fit-content;
 }
 
 .userProfile {
     float:right;
 }
 
+.githubIcon {
+    position: absolute;
+    left: 20px;
+    top: 810px;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background: black;
+    transition: 1.2s;
+    mask-image: url("/source/gitIcon.svg");
+    -webkit-mask-image: url("/source/gitIcon.svg");
+}
+
+.githubIcon:hover {
+    cursor: pointer;
+    background: #401214;
+}
+
+.yearCreation {
+    color:white;
+    font-size:20px;
+}
+
+.bsuirIcon {
+    float:right;
+    width: 80px;
+    height: 80px;
+    border: solid;
+    border-width: 4px;
+    margin-right: 18px;
+    margin-top: 8px;
+    border-color:#662225;
+    transition: 0.7s;
+}
+
+.bsuirIcon:hover {
+    cursor: pointer;
+    border-color:#401214;
+}
+
+.dateAndEvents {
+    width:100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.eventsList {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 7%;
+    margin-left: 5%;
+    border-radius: 15px;
+    font-size: 25px;
+    background: #EAD39C;
+}
+
 /*Calendar table*/
-#calendar_table {
-    width: 80%;
+#calendarTable {
+    width: 90%;
     font: monospace;
     line-height: 1.2em;
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
     background: #EAD39C;
     border-radius: 25px;
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-top: 7%;
+    padding-top: 1%;
 }
 
-#calendar_table thead tr:last-child {
+#calendarTable thead tr:last-child {
     font-size: small;
     color: rgb(85, 85, 85);
 }
 
-#calendar_table thead tr:nth-child(1) td:nth-child(2) {
+#calendarTable thead tr:nth-child(1) td:nth-child(2) {
     color: rgb(50, 50, 50);
 }
 
-#calendar_table thead tr:nth-child(1) td:nth-child(1):hover, #calendar_table thead tr:nth-child(1) td:nth-child(3):hover {
+#calendarTable thead tr:nth-child(1) td:nth-child(1):hover, #calendarTable thead tr:nth-child(1) td:nth-child(3):hover {
     cursor: pointer;
 }
 
-#calendar_table tbody td {
+#calendarTable tbody td {
     color: rgb(44, 86, 122);
 }
 
-#calendar_table tbody td:nth-child(n+6), #calendar_table .holiday {
+#calendarTable tbody td:nth-child(n+6), #calendarTable .holiday {
     color: rgb(231, 140, 92);
 }
 
-#calendar_table tbody td.today {
+#calendarTable tbody td.today {
     background: rgb(220, 0, 0);
     color: #fff;
 }
