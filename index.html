@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <title>Calendar</title>
-</head>
-<body>
-    <header>
-        <input type="button" value="Switch" onclick="switching()">
-    </header>
-
-    <main>
-        <div class="wrapper">
-            <!--Calendar-->
-            <div id="calendar" class="block">
-                <p>
-                    Calendar
-                </p>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <title>Calendar</title>
+    </head>
+    <body class="body">
+        <header class="headerBody">
+            <input class="inputChangePages" type="button" value="Switch">
+            <div class="divNameOfSection">
+                <label class="nameOfSection"></label>
             </div>
-
-            <!--Events management-->
-            <div id="events" class="none">
-                <p>
-                    Events
-                </p>
+            <label class="userProfile"></label>
+        </header>
+        <main class="mainBody">
+            <div class="wrapper">
+                <!--Calendar-->
+                <div id="calendar" class="block">
+                    <p class="showCurrentTime"></p>
+                    <table id="calendar_table">
+                        <thead>
+                        <tr><td>‹<td colspan="5"><td>›
+                        <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+                        <tbody>
+                    </table>
+                </div>
+                <!--Events management-->
+                <div id="events" class="none">
+                </div>
+                <!--Authorization-->
+                <div id="authorization" class="none">
+                    <!--Empty-->
+                </div>
+                <!--Add new event/Change existing event-->
+                <div id="events_changer" class="none">
+                    <!--Empty-->
+                </div>
             </div>
+        </main>
+        <footer class="footerBody">
 
-            <!--Authorization-->
-            <div id="authorization" class="none">
-                <!--Empty-->
-            </div>
-
-            <!--Add new event/Change existing event-->
-            <div id="events_changer" class="none">
-                <!--Empty-->
-            </div>
-        </div>
-    </main>
-
-    <footer>
-
-    </footer>
-
-<script src="js/index.js"></script>
-</body>
+        </footer>
+        <script src="js/index.js"></script>
+    </body>
 </html>
