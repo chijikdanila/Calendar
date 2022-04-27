@@ -1,29 +1,42 @@
 /*Switching pages with display*/
-document.querySelector(".inputChangePages").addEventListener("click", switching)
-function switching() {
-    let calendar = document.getElementById('calendar');
-    let label = document.querySelector(".nameOfSection");
-    let events = document.getElementById('events');
+const mainPages = [
+  [".authorization", "Registration"],
+  [".calendar", "Calendar"],
+  [".eventsFullList", "Events"],
+  [".eventsCreator", "Create event"]
+];
 
-    if (calendar.classList.contains('block')) {
-        calendar.classList.remove('block');
-        calendar.classList.add('none');
-    }
-    else if (calendar.classList.contains('none')) {
-        calendar.classList.remove('none');
-        calendar.classList.add('block');
-        label.innerHTML = "Calendar";
-    }
+function changePage(button) {
+  if(button.value === "-1") {
+    return;
+  }
+  const numOfPage = parseInt(button.value);
+  const currentPage = document.querySelector(".currentPage");
+  const nextPage = document.querySelector(mainPages[numOfPage][0]);
+  const changerPage = document.querySelector(".inputChangePages");
+  const nameOfSection = document.querySelector(".nameOfSection");
 
-    if (events.classList.contains('block')) {
-        events.classList.remove('block');
-        events.classList.add('none');
-    }
-    else if (events.classList.contains('none')) {
-        events.classList.remove('none');
-        events.classList.add('block');
-        label.innerHTML = "Events";
-    }
+  currentPage.classList.add("none");
+  currentPage.classList.remove("currentPage");
+  nextPage.classList.remove("none");
+  nextPage.classList.add("currentPage");
+  changerPage.value = numOfPage - 1;
+
+  if (numOfPage === 0){
+    changerPage.innerHTML = `To`;
+  } else {
+    changerPage.innerHTML = `To ${mainPages[numOfPage - 1][1]}`;
+  }
+
+  nameOfSection.innerHTML = mainPages[numOfPage][1];
+}
+
+let buttonsChangePage = document.querySelectorAll(".buttonChangePage");
+
+for (let button of buttonsChangePage) {
+  button.addEventListener("click", function() {
+    changePage(button);
+  });
 }
 
 /*Showing time*/
@@ -32,8 +45,8 @@ let secTimeLet = (num) => ((num.toString()).length === 2) ? num : "0" + num;
 function changeCurrentDate(show, secTimeLet) {
     let date = new Date();
     show.innerHTML = `${secTimeLet(date.getHours())}:${secTimeLet(date.getMinutes())}:`;
-    show.innerHTML += `${secTimeLet(date.getSeconds())}     ${secTimeLet(date.getDay())}`
-    show.innerHTML += `.${secTimeLet(date.getMonth())}.${date.getFullYear()}`
+    show.innerHTML += `${secTimeLet(date.getSeconds())}     ${secTimeLet(date.getDate())}`
+    show.innerHTML += `.${secTimeLet(date.getMonth() + 1)}.${date.getFullYear()}`
     setTimeout(changeCurrentDate, 1000, show, secTimeLet)
 }
 changeCurrentDate(showDate, secTimeLet);
@@ -78,4 +91,27 @@ document.querySelector('#calendarTable thead tr:nth-child(1) td:nth-child(1)').o
 // переключатель плюс месяц
 document.querySelector('#calendarTable thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
     Calendar("calendarTable", document.querySelector('#calendarTable thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendarTable thead td:nth-child(2)').dataset.month)+1);
+}
+
+let timeBorders = [[0, 24], [0, 60], [0, 60], [0, 32], [1, 13], [2010, 2100]];
+let timerCreators = document.querySelectorAll(".eventCrBlockTime");
+for (let i = 0; i < timerCreators.length; ++i) {
+  let elements = timerCreators[i].querySelectorAll(".inputEventCrTime");
+  for (let j = 0; j < 6; ++j) {
+    elements[j].addEventListener("change", function() {
+      let value = parseInt(elements[j].value);
+      if (isNaN(value) || value < timeBorders[j][0] || value >= timeBorders[j][1]) {
+        elements[j].value = String(timeBorders[j][0]);
+      }
+    })
+  }
+}
+
+function Event(title, desc, place, dateStart, dateEnd, reminder) {
+  this.title = title;
+  this.desc = desc;
+  this.place = place;
+  this.dateStart = dateStart;
+  this.dateEnd = dateEnd;
+  this.reminder = reminder;
 }

@@ -4,12 +4,16 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/autorization.css" rel="stylesheet" type="text/css">
+        <link href="css/calendar.css" rel="stylesheet" type="text/css">
+        <link href="css/events.css" rel="stylesheet" type="text/css">
+        <link href="css/eventCreate.css" rel="stylesheet" type="text/css">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <title>Calendar</title>
     </head>
     <body class="body">
         <header class="headerBody">
-            <input class="inputChangePages" type="button" value="Switch">
+            <input class="inputChangePages" type="button" value="">
             <div class="divNameOfSection">
                 <label class="nameOfSection">Calendar</label>
             </div>
@@ -17,11 +21,22 @@
         </header>
         <main class="mainBody">
             <div class="wrapper">
+                <!--Authorization-->
+                <div class="authorization flex currentPage">
+                    <div class="input">
+                        <input type="text" placeholder="E-mail">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <div class="button">
+                        <p class="registration">Registration</p>
+                        <button class="buttonChangePage" type="submit" value="1">Log in</button>
+                    </div>
+                </div>
                 <!--Calendar-->
-                <div id="calendar" class="block">
+                <div class="calendar none block">
                     <div class="dateAndEvents">
                         <label class="showCurrentTime"></label>
-                        <button class="eventsManagment">Events management</button>
+                        <button class="eventsManagment buttonChangePage" value="2">Events management</button>
                     </div>
                     <label class="eventsList">Events</label>
                     <table id="calendarTable">
@@ -32,15 +47,73 @@
                     </table>
                 </div>
                 <!--Events management-->
-                <div id="events" class="none">
-                </div>
-                <!--Authorization-->
-                <div id="authorization" class="none">
-                    <!--Empty-->
+                <div class="eventsFullList none flex">
+                    <div class="eventsFLCreateEvent">
+                        <button class="buttonChangePage"  value="3">Add event</button>
+                    </div>
+                    <table class="showAllEvents">
+                        <thead>
+                            <th>&nbsp;</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Place</th>
+                            <th>Start</th>
+                            <th>End</th>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
                 </div>
                 <!--Add new event/Change existing event-->
-                <div id="eventsChanger" class="none">
-                    <!--Empty-->
+                <div class="eventsCreator none flex">
+                    <div class="eventCrBlock">
+                        <div class="eventCrBlockRightTransition">
+                            <div class="eventCrInputBlock">
+                                <label class="sectionNameCreatingEvents">Title</label>
+                                <input type="text" value="Name" class="inputCrEvent inputCrEventTitle">
+                            </div>
+                            <div class="eventCrInputBlock">
+                                <label class="sectionNameCreatingEvents">Description</label>
+                                <textarea class="inputCrEvent inputCrEventDescrip">Description</textarea>
+                            </div>
+                            <div class="eventCrInputBlock">
+                                <label class="sectionNameCreatingEvents">Place</label>
+                                <input type="text" value="Place" class="inputCrEvent inputCrEventPlace">
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="eventCrBlock">
+                        <div class="eventCrInputBlock">
+                            <label class="sectionNameCreatingEvents">Start</label>
+                            <div class="eventCrBlockTime">
+                                <input type="number" value="0" name="Hour" min="0" max="23" step="1" size="2" class="inputEventCrTime">
+                                <label>H</label>
+                                <input type="number" value="0" name="Minute" min="0" max="59" step="1" size="2" class="inputEventCrTime">
+                                <label>M</label>
+                                <input type="number" value="0" name="Second" min="0" max="59" step="1" size="2" class="inputEventCrTime">
+                                <label>S</label>
+                                <input type="date" name="startEvent" value="2010-01-01">
+                            </div>
+                            <label class="sectionNameCreatingEvents">End</label>
+                            <div class="eventCrBlockTime">
+                                <input type="number" value="0" name="Hour" min="0" max="23" step="1" size="2" class="inputEventCrTime">
+                                <label>H</label>
+                                <input type="number" value="0" name="Minute" min="0" max="59" step="1" size="2" class="inputEventCrTime">
+                                <label>M</label>
+                                <input type="number" value="0" name="Second" min="0" max="59" step="1" size="2" class="inputEventCrTime">
+                                <label>S</label>
+                                <input type="date" name="endEvent" value="2010-01-01">
+                            </div>
+                        </div>
+                        <div class="eventCrInputBlock">
+                            <label class="sectionNameCreatingEvents">Reminders</label>
+                            <textarea class="inputCrEvent inputCrEventReminder">Description</textarea>
+                        </div>
+                        <div class="eventCreateBlock">
+                            <button class="buttonCreateEvent buttonChangePage" value="2">Add event</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

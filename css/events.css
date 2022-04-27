@@ -1,0 +1,25 @@
+.eventsFullList {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.eventsFLCreateEvent {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: -20px 0px 20px 0px;
+}
+
+.showAllEvents {
+    width: 80%;
+    height: 80%;
+    background-color: #EAD39C;
+}
+
+.celleventFL {
+    height: 10vh;
+}
