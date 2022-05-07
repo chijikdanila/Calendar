@@ -20,6 +20,10 @@
     background-color: #EAD39C;
 }
 
+.showAllEventsHead {
+    height: 10%;
+}
+
 .celleventFL {
     height: 10vh;
 }

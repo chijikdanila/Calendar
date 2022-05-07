@@ -1,0 +1,58 @@
+.eventsCreator {
+    flex-direction: column;
+}
+
+.eventCrBlock {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 60%;
+}
+
+.inputData {
+    width: 80%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    width: 50%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eventCrBlockRightTransition {
+    margin-bottom: 0px;
+}
+
+.inputEventCrTime {
+    width: 40px;
+    height: 20px;
+    padding-left: 5%;
+    padding-right: 1%;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.inputCrEventReminder {
+    resize: none;
+    height: 9vh;
+    max-height: 150px;
+    border-width: 2px;
+    padding-left: 2%;
+}
+
+.inputCrEventDescrip {
+    resize: none;
+    height: 9vh;
+    max-height: 150px;
+    border-width: 2px;
+    padding-left: 2%;
+}
