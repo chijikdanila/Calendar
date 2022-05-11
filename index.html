@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/autorization.css" >
+        <link rel="stylesheet" type="text/css" href="css/calendar.css" >
+        <link rel="stylesheet" type="text/css" href="css/events.css" >
+        <link rel="stylesheet" type="text/css" href="css/eventCreate.css" >
+        <link rel="stylesheet" type="text/css" href="css/main.css" >
+        <link rel="stylesheet" type="text/css" href="css/mobileMods.css" media="(max-width: 768px)">
+        <link rel="icon" type="image/x-icon" href="/source/calendar.ico">
+        <title>Calendar</title>
+    </head>
+    <body class="body">
+        <header class="headerBody">
+            <div class="sectionHeaderLeft">
+                <button class="inputChangePages buttonChangePage" value="-1">To</button>
+            </div>
+            <div class="divNameOfSection">
+                <h1 class="nameOfSection">Registration</h1>
+            </div>
+            <div class="sectionHeaderRight">
+                <h3 class="userProfile"></h3f>
+            </div>
+        </header>
+        <main class="mainBody">
+            <div class="wrapper">
+                <!--Authorization-->
+                <div class="authorization flex currentPage">
+                    <div class="inputData">
+                        <input type="text" placeholder="E-mail" class="input">
+                        <input type="password" placeholder="Password" class="input">
+                    </div>
+                    <div class="button">
+                        <!--В 4ой лабе станет полноценной регистрацией-->
+                        <p class="registration">Registration</p>
+                        <button class="login buttonChangePage" type="submit" value="1">Log in</button>
+                    </div>
+                </div>
+                <!--Calendar-->
+                <div class="calendar none flex">
+                    <div class="dateAndEvents">
+                        <p class="showCurrentTime"></p>
+                        <button class="eventsManagement buttonChangePage" value="2">Events management</button>
+                    </div>
+                    <p class="eventsList">Events</p>
+                    <table id="calendarTable">
+                        <thead>
+                        <tr><td>‹<td colspan="5"><td>›
+                        <tr><td>Mo<td>Tu<td>We<td>Th<td>Fr<td>Sa<td>Su
+                        <tbody>
+                    </table>
+                </div>
+                <!--Events management-->
+                <div class="eventsFullList none flex">
+                    <div class="eventsFLCreateEvent">
+                        <button class="addEventButton buttonChangePage"  value="3">Add event</button>
+                    </div>
+                    <table class="showAllEvents">
+                        <thead class="showAllEventsHead">
+                            <th>&nbsp;</th>
+                            <th class="namesOfColumn">Title</th>
+                            <th class="namesOfColumn">Description</th>
+                            <th class="namesOfColumn">Place</th>
+                            <th class="namesOfColumn">Start</th>
+                            <th class="namesOfColumn">End</th>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--Add new event/Change existing event-->
+                <div class="eventsCreator none flex">
+                    <form method="get" class="eventsCreator">
+                        <div class="eventCrBlock">
+                            <div class="eventCrBlockRightTransition">
+                                <label for="title" class="sectionNameCreatingEvents">Title</label>
+                                <input type="text" id="title" value="Name" class="inputCrEvent inputCrEventTitle">
+                                <label for="description" class="sectionNameCreatingEvents">Description</label>
+                                <textarea id="description" class="inputCrEvent inputCrEventDescrip">Description</textarea>
+                                <label for="place" class="sectionNameCreatingEvents">Place</label>
+                                <input type="text" id="place" value="Place" class="inputCrEvent inputCrEventPlace">
+                            </div> 
+                        </div>
+                        <div class="eventCrBlock">
+                            <div class="eventCrInputBlock">
+                                <p class="sectionNameCreatingEvents">Start</p>
+                                <div class="eventCrBlockTime">
+                                    <input type="number" id="starthour" value="0" name="HourStart" min="0" max="23" step="1" class="inputEventCrTime">
+                                    <label for="starthour" class="letter">H</label>
+                                    <input type="number" id="startminute" value="0" name="MinuteStart" min="0" max="59" step="1" size="4" class="inputEventCrTime">
+                                    <label for="startminute" class="letter">M</label>
+                                    <input type="date" id="startdate" value="2022-01-01" name="DateStart" class="inputDate">
+                                    <label for="startdate" class="letter">Date</label>
+                                </div>
+                                <p class="sectionNameCreatingEvents">End</p>
+                                <div class="eventCrBlockTime">
+                                    <input type="number" id="endhour" value="0" name="HourEnd" min="0" max="23" step="1" size="4" class="inputEventCrTime">
+                                    <label for="endhour" class="letter">H</label>
+                                    <input type="number" id="endminute" value="0" name="MinuteEnd" min="0" max="59" step="1" size="4" class="inputEventCrTime">
+                                    <label for="endminute" class="letter">M</label>
+                                    <input type="date" id="enddate" value="2022-01-01" name="DateEnd" class="inputDate">
+                                    <label for="enddate" class="letter">Date</label>
+                                </div>
+                                <label for="reminders" class="sectionNameCreatingEvents">Reminders</label>
+                                <textarea id="reminders" class="inputCrEvent inputCrEventReminder">Description</textarea>
+                            </div>
+                            <div class="eventCreateBlock">
+                                <button class="buttonCreateEvent buttonChangePage" value="2">Add event</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="footerBody">
+            <div class="sectionHeaderLeft">
+                <a href="https://github.com/chijikdanila" target="_blank" class="githubCont">
+                    <div class="githubIcon"></div>
+                </a>
+            </div>
+            <div class="divNameOfSection">
+                <p class="yearCreation">2022</p>
+            </div> 
+            <div class="sectionHeaderRight">
+                <a href="https://www.bsuir.by" target="_blank">
+                    <img class="bsuirIcon" src="./source/bsuir.jpg">
+                </a>
+            </div>
+        </footer>
+        <script type="module" src="js/index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,124 @@
+.body {
+    width: 100vw;
+    height: 100vh;
+    max-width: 1440px;
+    max-height: 900px;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    font-size: 62.5%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.mainBody {
+    width: 100%;
+    height: 78%;
+}
+
+.headerBody, .footerBody {
+    width: 100%;
+    height: 11%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #662225;
+}
+
+.flex {
+    display: flex;
+}
+
+.none {
+    display: none;
+}
+
+.registration {
+    font-size: 2em;
+}
+
+.sectionHeaderLeft {
+    width: 35%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sectionHeaderRight {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.divNameOfSection {
+    width: 30%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameOfSection {
+    color: white;
+    font-size: 3.6em;
+}
+
+.inputChangePages {
+    height: 40px;
+    margin-left: 3%;
+    width: fit-content;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.githubCont {
+    max-width: 99px;
+    max-height: 99px;
+    height: 11vh;
+    width: 11vh;
+}
+
+.githubIcon {
+    width: 80%;
+    height: 80%;
+    max-width: 80px;
+    max-height: 80px;
+    margin-top: 10px;
+    background: black;
+    transition: 1.2s;
+    mask-image: url("/source/gitIcon.svg");
+    -webkit-mask-image: url("/source/gitIcon.svg");
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.githubIcon:hover {
+    cursor: pointer;
+    background: #a84949;
+}
+
+.yearCreation {
+    color:white;
+    font-size:20px;
+}
+
+.bsuirIcon {
+    max-width: 80px;
+    max-height: 80px;
+    height: calc(0.8 * 11vh);
+    width: calc(0.8 * 11vh);;
+    border: solid;
+    border-width: 4px;
+    margin-right: 18px;
+    margin-top: 6px;
+    border-color:#662225;
+    transition: 1.2s;
+}
+
+.bsuirIcon:hover {
+    cursor: pointer;
+    border-color:#08023e;
+}
